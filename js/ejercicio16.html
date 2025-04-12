@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 16</title>
+
+    <script>
+        let num1 = Number(prompt("Ingrese primer numero: "))
+        let num2 = Number(prompt("Ingrese segundo numero: "))
+
+        function sumarRango(a, b) {
+            let rango = 0;
+            if(a <= b)
+                for(let i = a; i <= b; i++)
+                    rango += i;
+            else
+                for(let i = b; i <= a; i++)
+                    rango += i;
+            return rango;
+        }
+
+        alert("La suma de los numero del rango es: " + sumarRango(num1, num2));
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

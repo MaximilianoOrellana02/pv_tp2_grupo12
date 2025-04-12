@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 17</title>
+
+    <script>
+        let string = prompt("Ingrese una cadena: ");
+        
+        function contarLetraA(string) {
+            let contar = 0;
+            for(let i = 0; i < string.length; i++) 
+                if(string[i] == 'A' || string[i] == 'a')
+                    contar++;
+
+            return contar;
+        }
+
+        alert("Cantidad de letras A: " + contarLetraA(string));
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
