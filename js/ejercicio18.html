@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Texto</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .paragraph-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #miParrafo {
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="paragraph-container">
+        <p id="miParrafo">Hola.</p>
+    </div>
+
+    <button id="miBoton">click</button>
+
+    <script>
+        const miParrafo = document.getElementById('miParrafo');
+        const miBoton = document.getElementById('miBoton');
+        const nuevoTexto = "¡Adios!";
+
+        miBoton.addEventListener('click', function() {
+            miParrafo.textContent = nuevoTexto;
+        });
+    </script>
+
+</body>
+</html>
