@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector de País y Capital</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Seleccione un País y su Capital</h1>
+
+    <div>
+        <label for="paises">País:</label>
+        <select id="paises">
+            <option value="">Seleccione un país</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Brasil">Brasil</option>
+            <option value="Colombia">Colombia</option>
+            <option value="México">México</option>
+            <option value="Perú">Perú</option>
+            <option value="Canadá">Canadá</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="capitales">Capital:</label>
+        <select id="capitales">
+            <option value="">Seleccione una capital</option>
+            <option value="Buenos Aires" data-pais="Argentina">Buenos Aires</option>
+            <option value="Brasilia" data-pais="Brasil">Brasilia</option>
+            <option value="Bogotá" data-pais="Colombia">Bogotá</option>
+            <option value="Ciudad de México" data-pais="México">Ciudad de México</option>
+            <option value="Lima" data-pais="Perú">Lima</option>
+            <option value="Ottawa" data-pais="Canadá">Ottawa</option>
+        </select>
+    </div>
+
+    <script>
+        const paisesSelect = document.getElementById('paises');
+        const capitalesSelect = document.getElementById('capitales');
+
+        paisesSelect.addEventListener('change', function() {
+            const paisSeleccionado = this.value;
+
+            // Deseleccionar todas las opciones de capital
+            for (let i = 0; i < capitalesSelect.options.length; i++) {
+                capitalesSelect.options[i].selected = false;
+            }
+
+            // Seleccionar la capital correspondiente
+            for (let i = 0; i < capitalesSelect.options.length; i++) {
+                if (capitalesSelect.options[i].getAttribute('data-pais') === paisSeleccionado) {
+                    capitalesSelect.options[i].selected = true;
+                    console.log(`País seleccionado: ${paisSeleccionado}, Capital: ${capitalesSelect.value}`);
+                    break; // Detener la búsqueda una vez encontrada la capital
+                }
+            }
+
+            // Si no se encuentra la capital, mostrar solo el país
+            if (capitalesSelect.value === "") {
+                console.log(`País seleccionado: ${paisSeleccionado}`);
+            }
+        });
+
+        capitalesSelect.addEventListener('change', function() {
+            const capitalSeleccionada = this.value;
+            const paisCorrespondiente = this.options[this.selectedIndex].getAttribute('data-pais');
+            if (paisCorrespondiente) {
+                console.log(`País seleccionado: ${paisCorrespondiente}, Capital: ${capitalSeleccionada}`);
+            } else if (capitalSeleccionada !== "") {
+                console.log(`Capital seleccionada: ${capitalSeleccionada}`);
+            }
+        });
+    </script>
+
+</body>
+</html>
