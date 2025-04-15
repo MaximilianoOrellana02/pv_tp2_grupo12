@@ -3,38 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Datos</title>
+    <title>Ejercicio 19</title>
 </head>
 <body>
+    <form action="">
+        <input type="text" name="" id="nombre" placeholder="Nombre">
+        <input type="text" name="" id="apellido" placeholder="Apellido">
+        <input type="text" name="" id="lu" placeholder="Libreta Universitaria">
+        <button id="boton">Enviar</button>
+    </form>
 
-    <h2>Ingrese sus datos:</h2>
-
-    <label for="nombre">Nombre:</label><br>
-    <input type="text" id="nombre" name="nombre"><br><br>
-
-    <label for="apellido">Apellido:</label><br>
-    <input type="text" id="apellido" name="apellido"><br><br>
-
-    <label for="libreta">Libreta Universitaria:</label><br>
-    <input type="text" id="libreta" name="libreta"><br><br>
-
-    <button onclick="mostrarDatos()">Mostrar Datos</button>
-
-    <script>
-        function mostrarDatos() {
-            const nombreInput = document.querySelector('#nombre');
-            const apellidoInput = document.querySelector('#apellido');
-            const libretaInput = document.querySelector('#libreta');
-
-            const nombre = nombreInput.value;
-            const apellido = apellidoInput.value;
-            const libreta = libretaInput.value;
-
-            const mensaje = `Los datos ingresados son:\nNombre: ${nombre}\nApellido: ${apellido}\nLibreta Universitaria: ${libreta}`;
-
-            alert(mensaje);
-        }
-    </script>
-
+    <script type="module" src="JS/ejercicio19.js"></script>
 </body>
 </html>
