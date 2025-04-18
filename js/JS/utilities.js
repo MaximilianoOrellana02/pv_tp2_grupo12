@@ -1,10 +1,10 @@
 //Ejercicio 18
-export function cambiarTexto() {
+export let cambiarTexto = () => {
     let parrafo = document.getElementById("texto");
     parrafo.textContent = "Texto cambiado";
 }
 //Ejercicio 19
-export function mostrarDatos() {
+export let mostrarDatos = () => {
     const nombre = document.querySelector("#nombre").value;
     const apellido = document.querySelector("#apellido").value;
     const lu = document.querySelector("#lu").value;
@@ -23,7 +23,7 @@ export const paisesCapitales = {
     "Peru": "Lima"
 };
 
-export function actualizarCapital() {
+export let actualizarCapital = () => {
     let paisSeleccionado = document.getElementById("pais").value;
     let capitalSeleccionada = document.getElementById("capital");
 
@@ -34,14 +34,14 @@ export function actualizarCapital() {
 }
 
 //Ejercicio 21
-export function clonarTexto () {
+export let clonarTexto = () => {
     document.getElementById("texto").addEventListener("input", function() {
         document.getElementById("textoOutput").textContent = this.value;
     });
 }
 
 //Ejercicio 22
-export function clonarText() {
+export let clonarText = () => {
     document.getElementById("texto").addEventListener("input", function() {
         document.getElementById("textoOutput").textContent = this.value;
 
@@ -58,7 +58,7 @@ export function clonarText() {
 
 //Ejercicio 23
 
-export function actualizarTexto() {
+export let actualizarTexto = () => {
     document.getElementById("opciones").addEventListener("change", function(event) {
         if (event.target.name === "lenguaje") {
             const seleccionado = event.target.value;
@@ -70,7 +70,7 @@ export function actualizarTexto() {
 }
 
 //Ejercicio 24
-export function cambiarColorFondo() {
+export let cambiarColorFondo = () => {
     const colores = ["#ffcccb", "#d4edda", "#cce5ff", "#f9e79f", "#e8daef"];
     const colorAleatorio = colores[Math.floor(Math.random() * colores.length)];
     

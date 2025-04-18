@@ -1,4 +1,4 @@
-function calcularMayor(numero1, numero2) {
+let calcularMayor = (numero1, numero2) =>  {
     if(numero1 > numero2)
         console.log(numero1 + " es mayor");
     else if (numero2 > numero1)
